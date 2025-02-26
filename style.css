@@ -57,18 +57,21 @@ body {
 
 .caption {
   font-size: 18px;
-  margin-top: 15px;
   text-align: center;
+}
+
+.container {
+  max-width: 1070px;
 }
 
 /* Container for the cards */
 .timeline-container {
-  max-width: 1090px;
+  /* max-width: 1090px; */
   margin: 0 auto;
   padding-top: 50px;
   display: flex;
   overflow-x: auto; /* Enable horizontal scrolling */
-  gap: 24px;
+  gap: 20px;
   padding: 30px 12px; /* Add padding to avoid scrollbar overlap */
   scroll-snap-type: x mandatory; /* Enable scroll snap */
 }
@@ -117,6 +120,7 @@ body {
   padding: 20px;
   box-sizing: border-box;
   opacity: 0;
+  margin: 0;
   overflow-y: auto; /* Allow vertical scrolling if content overflows */
   transition: opacity 0.3s; /* Add transition for hover effects */
 }
@@ -151,6 +155,5 @@ body {
   }
   .caption {
     margin-top: 0;
-    margin-bottom: 20px;
   }
 }
