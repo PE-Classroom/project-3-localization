@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- <html lang="en" dir="rtl"> -->
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -36,8 +35,6 @@
       </p>
     </div>
   </header>
-
-  <!-- <p class="caption">Scroll to view timeline | Hover over cards to learn more!</p> -->
 
   <!-- Timeline Cards Section -->
   <section class="container timeline-container">
@@ -205,10 +202,51 @@
     </div>
   </section>
 
+  <!-- Subscription Form -->
+  <section class="subscription-form bg-white text-center py-5">
+    <h2>
+      <!-- Bootstrap Icon -->
+      <i class="bi bi-envelope"></i> Subscribe to our Sustainability Newsletter
+    </h2>
+    <form action="#" method="post" class="container">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-12 col-md-6 col-lg-4 mb-3">
+          <!-- Hidden label for accessibility -->
+          <label for="email" class="form-label visually-hidden">Email address</label>
+          <input type="email" id="email" name="email" class="form-control form-control-lg" placeholder="Enter your email" required>
+        </div>
+        <div class="col-12 col-md-4 col-lg-2 mb-3">
+          <button type="submit" class="btn btn-primary btn-lg w-100">Subscribe</button>
+        </div>
+      </div>
+    </form>
+  </section>
+
   <!-- Footer Section -->
   <footer class="text-center py-4">
     <p>&copy; 2025 Intel Corporation. All rights reserved.</p>
   </footer>
 
+  <!-- JavaScript to detect Google Translate language change -->
+  <script>
+    function applyRtlIfNeeded() {
+      const rtlLanguages = ['ar', 'he', 'fa', 'ur'];
+      const htmlElement = document.documentElement;
+      const lang = htmlElement.getAttribute('lang');
+
+      if (rtlLanguages.includes(lang)) {
+        htmlElement.setAttribute('dir', 'rtl');
+      } else {
+        htmlElement.setAttribute('dir', 'ltr');
+      }
+    }
+
+    // Observe changes to the lang attribute on the html element
+    const observer = new MutationObserver(applyRtlIfNeeded);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+
+    // Initial check
+    applyRtlIfNeeded();
+  </script>
 </body>
 </html>
